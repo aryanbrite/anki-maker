@@ -1,6 +1,6 @@
 import streamlit as st
 import pdfplumber
- 
+
 st.set_page_config(
     page_icon="📚",
     page_title="FlashCard",
@@ -15,9 +15,17 @@ with cl2:
 
 if a and b:
     st.balloons()
+    with pdfplumber.open(b) as pdf:
+        es=pdf.pages
+    st.write(es)
 elif a:
     with cl2:
         st.warning("Please upload file first")
+
+
+
+
+
 
 
 
