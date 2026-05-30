@@ -12,7 +12,6 @@ st.logo("https://cdn.hackclub.com/019e7928-ee48-79b3-8073-8098df0d8b90/Anki%20AI
 
 client=genai.Client(api_key="")
 
-st.markdown("# AI ANki Maker")
 cl1, cl2, cl3 = st.columns([2,3,2])
 with cl2:
     b=st.file_uploader("Upload PDF",type=["pdf"])
