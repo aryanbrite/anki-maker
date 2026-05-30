@@ -4,11 +4,11 @@ from google import genai
 import pandas as pd
 
 st.set_page_config(
-    page_icon="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQSmYLcF6IvX0GLaNVWs3euvSCbs7NOSfRVw&s",
+    page_icon="https://cdn.hackclub.com/019e7958-7190-7083-84ae-d86b4bff3f24/pngwing.com.png",
     page_title="FlashCard",
     layout="wide"
 )
-st.logo("https://cdn.hackclub.com/019e7958-7190-7083-84ae-d86b4bff3f24/pngwing.com.png", size="large")
+st.logo("https://cdn.hackclub.com/019e795b-48ef-7487-818a-74ad672d92df/Anki%20AI%20(3).png", size="large")
 
 
 left, centre, right = st.columns([1,7,1])
