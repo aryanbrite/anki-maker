@@ -30,7 +30,9 @@ uu, cl1, cl2, cl3 = st.columns([1,3.5,3.5,1])
 with cl2:
     b=st.file_uploader("Upload PDF",type=["pdf"])
     st.divider()
-    a=st.button("Submit")
+    h1,h2,h3=st.columns([2,3,3])
+    with h1:
+        a=st.button("Submit")
 
 if a and b:
     with cl2:
@@ -79,19 +81,19 @@ if a and b:
                 a = lines[1].replace("A:", "").strip()
 
                 flashcards.append({"q": q, "a": a})
-    cc1,cc2 = st.columns([8,2])
-    with cc1:
-        st.markdown("# Preview")
+
+
+    st.markdown("# Preview")
+    st.divider()
+    for card in flashcards:
+        st.markdown(f"""
+                    ### Question
+                    {card["q"]}""")
+        st.markdown(f"""
+                    ### Answer
+                    {card["a"]}""")
         st.divider()
-        for card in flashcards:
-            st.markdown(f"""
-                        ### Question
-                        {card["q"]}""")
-            st.markdown(f"""
-                        ### Answer
-                        {card["a"]}""")
-            st.divider()
-    with cc2:
+    with h2:
         df = pd.DataFrame(flashcards)
         csv = df.to_csv(index=False)
         st.download_button(
