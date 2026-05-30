@@ -112,8 +112,8 @@ elif a:
 with cl1:
     st.image("https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/291090478/original/fab09b092a43fcfe1aa2e70bfd7000ed47b14fe4/create-customized-anki-cards.png")
 
-
-
+st.write("Give Feedback :)")
+st.feedback("stars")
 
 
 
