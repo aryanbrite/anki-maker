@@ -10,6 +10,20 @@ st.set_page_config(
 )
 st.logo("https://cdn.hackclub.com/019e7928-ee48-79b3-8073-8098df0d8b90/Anki%20AI%20(1).png", size="large")
 
+
+left, centre, right = st.columns([1,7,1])
+with centre:
+    st.title("Turn Medical Notes into Anki Cards in Seconds")
+    st.caption("AI-powered flashcard generation for doctors and medical students.")
+    st.divider()
+    st.write("Doctors and medical students typically spend 1 to 4 hours per day making and reviewing Anki cards, It should be this hard !")
+    st.write("")
+    st.write("")
+
+
+
+
+
 client=genai.Client(api_key=st.secrets["gemini_api"])
 
 cl1, cl2, cl3 = st.columns([2,3,2])
