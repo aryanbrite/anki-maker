@@ -1,6 +1,7 @@
 import streamlit as st
 import pdfplumber
 from google import genai
+import pandas as pd
 
 st.set_page_config(
     page_icon="📚",
@@ -16,7 +17,7 @@ with cl2:
     a=st.button("Submit")
 
 if a and b:
-    st.balloons()
+
     with pdfplumber.open(b) as pdf:
         txt=""
         for i in pdf.pages:
@@ -46,10 +47,37 @@ if a and b:
             model="gemini-3.5-flash",
             contents=prompt
         )
-        s=responce.split("\n\n")
+        result = responce.text
+        blocks = result.strip().split("\n\n")
+
+    flashcards = []
+
+    for block in blocks:
+        if "Q:" in block and "A:" in block:
+            lines = block.split("\n")
+
+            if len(lines) >= 2:
+                q = lines[0].replace("Q:", "").strip()
+                a = lines[1].replace("A:", "").strip()
+
+                flashcards.append({"q": q, "a": a})
+    st.markdown("# Preview")
+    st.divider()
+    st.divider()
+    for card in flashcards:
+        st.markdown(f"""
+                    ### Question
+                    {card["q"]}""")
+        st.markdown(f"""
+                    ### Answer
+                    {card["a"]}""")
+        st.divider()
+    df = pd.DataFrame
+    st.balloons()
 elif a:
     with cl2:
         st.warning("Please upload file first")
+        
 
 
 
