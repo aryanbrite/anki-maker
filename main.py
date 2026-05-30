@@ -1,5 +1,6 @@
 import streamlit as st
 import pdfplumber
+from google import genai
 
 st.set_page_config(
     page_icon="📚",
@@ -16,8 +17,12 @@ with cl2:
 if a and b:
     st.balloons()
     with pdfplumber.open(b) as pdf:
-        es=pdf.pages[0].extract_table()
-    st.write(es)
+        txt=""
+        for i in pdf.pages:
+            a=i.extract_text()
+            if a:
+                txt=txt+a
+        st.write(txt)
 elif a:
     with cl2:
         st.warning("Please upload file first")
