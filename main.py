@@ -8,7 +8,7 @@ st.set_page_config(
     page_title="FlashCard",
     layout="wide"
 )
-st.logo("https://cdn.hackclub.com/019e7928-ee48-79b3-8073-8098df0d8b90/Anki%20AI%20(1).png", size="large")
+st.logo("https://cdn.hackclub.com/019e7958-7190-7083-84ae-d86b4bff3f24/pngwing.com.png", size="large")
 
 
 left, centre, right = st.columns([1,7,1])
@@ -29,6 +29,7 @@ client=genai.Client(api_key=st.secrets["gemini_api"])
 uu, cl1, cl2, cl3 = st.columns([1,3.5,3.5,1])
 with cl2:
     b=st.file_uploader("Upload PDF",type=["pdf"])
+    st.divider()
     a=st.button("Submit")
 
 if a and b:
