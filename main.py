@@ -8,6 +8,11 @@ st.set_page_config(
     page_title="FlashCard",
     layout="wide"
 )
+st.logo("https://cdn.hackclub.com/019e7928-ee48-79b3-8073-8098df0d8b90/Anki%20AI%20(1).png", size="large")
+st.image(
+    "https://user-cdn.hackclub-assets.com/019e791a-e88d-771e-b777-66f4658ae060/Anki%20AI.png",
+    use_container_width=True
+)
 client=genai.Client(api_key="")
 
 st.markdown("# AI ANki Maker")
@@ -46,7 +51,7 @@ if a and b:
     with cl2:
         with st.spinner("Generating Flashcard"):
             responce= client.models.generate_content(
-                model="gemini-3.5-flash",
+                model="gemini-3.1-flash-lite",
                 contents=prompt
             )
             result = responce.text
@@ -63,24 +68,27 @@ if a and b:
                 a = lines[1].replace("A:", "").strip()
 
                 flashcards.append({"q": q, "a": a})
-    st.markdown("# Preview")
-    st.divider()
-    for card in flashcards:
-        st.markdown(f"""
-                    ### Question
-                    {card["q"]}""")
-        st.markdown(f"""
-                    ### Answer
-                    {card["a"]}""")
+    cc1,cc2 = st.columns([8,2])
+    with cc1:
+        st.markdown("# Preview")
         st.divider()
-    df = pd.DataFrame(flashcards)
-    csv = df.to_csv(index=False)
-    st.download_button(
-        label = "Download Anki File",
-        file_name = "anki-maker.csv",
-        mime = "text/csv",
-        data=csv,
-    )
+        for card in flashcards:
+            st.markdown(f"""
+                        ### Question
+                        {card["q"]}""")
+            st.markdown(f"""
+                        ### Answer
+                        {card["a"]}""")
+            st.divider()
+    with cc2:
+        df = pd.DataFrame(flashcards)
+        csv = df.to_csv(index=False)
+        st.download_button(
+            label = "Download Anki File",
+            file_name = "anki-maker.csv",
+            mime = "text/csv",
+            data=csv,
+        )
 
 
     st.balloons()
