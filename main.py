@@ -1,5 +1,6 @@
 import streamlit as st
-import pdfplumber 
+import pdfplumber
+ 
 st.set_page_config(
     page_icon="📚",
     page_title="FlashCard",
