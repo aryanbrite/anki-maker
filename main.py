@@ -9,10 +9,7 @@ st.set_page_config(
     layout="wide"
 )
 st.logo("https://cdn.hackclub.com/019e7928-ee48-79b3-8073-8098df0d8b90/Anki%20AI%20(1).png", size="large")
-st.image(
-    "https://user-cdn.hackclub-assets.com/019e791a-e88d-771e-b777-66f4658ae060/Anki%20AI.png",
-    use_container_width=True
-)
+
 client=genai.Client(api_key="")
 
 st.markdown("# AI ANki Maker")
