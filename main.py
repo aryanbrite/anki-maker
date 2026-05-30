@@ -16,12 +16,11 @@ with cl2:
 if a and b:
     st.balloons()
     with pdfplumber.open(b) as pdf:
-        es=pdf.pages
+        es=pdf.pages[0].extract_table()
     st.write(es)
 elif a:
     with cl2:
         st.warning("Please upload file first")
-
 
 
 
