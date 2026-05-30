@@ -4,7 +4,7 @@ from google import genai
 import pandas as pd
 
 st.set_page_config(
-    page_icon="📚",
+    page_icon="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQSmYLcF6IvX0GLaNVWs3euvSCbs7NOSfRVw&s",
     page_title="FlashCard",
     layout="wide"
 )
@@ -16,7 +16,7 @@ with centre:
     st.title("Turn Medical Notes into Anki Cards in Seconds")
     st.caption("AI-powered flashcard generation for doctors and medical students.")
     st.divider()
-    st.write("Doctors and medical students typically spend 1 to 4 hours per day making and reviewing Anki cards, It should be this hard !")
+    st.write("Doctors and medical students typically spend 1 to 4 hours per day making and reviewing Anki cards, It should'nt be this hard !")
     st.write("")
     st.write("")
 
@@ -26,7 +26,7 @@ with centre:
 
 client=genai.Client(api_key=st.secrets["gemini_api"])
 
-cl1, cl2, cl3 = st.columns([2,3,2])
+uu, cl1, cl2, cl3 = st.columns([1,3.5,3.5,1])
 with cl2:
     b=st.file_uploader("Upload PDF",type=["pdf"])
     a=st.button("Submit")
@@ -106,7 +106,8 @@ elif a:
     with cl2:
         st.warning("Please upload file first")
         
-
+with cl1:
+    st.image("https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/291090478/original/fab09b092a43fcfe1aa2e70bfd7000ed47b14fe4/create-customized-anki-cards.png")
 
 
 
