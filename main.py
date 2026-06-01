@@ -4,17 +4,18 @@ from google import genai
 import pandas as pd
 from streamlit_firebase_auth import FirebaseAuth 
 
-auth=FirebaseAuth({})
-user=auth.check_session
+auth=FirebaseAuth({ 
+    ""})
+
+placeholder=st.empty()
+with placeholder:
+    user=auth.check_session()
+placeholder.empty()
 if user:
     pass
 else:
     auth.login_form()
     st.stop()
-
-
-user=auth.check_session
-
 
 st.set_page_config(
     page_icon="https://cdn.hackclub.com/019e7958-7190-7083-84ae-d86b4bff3f24/pngwing.com.png",
@@ -131,3 +132,4 @@ st.feedback("stars")
 
 
 
+ck1,ck2=st.columns(2)
