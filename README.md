@@ -13,8 +13,7 @@
   <img alt="Streamlit" src="https://img.shields.io/badge/Streamlit-635bff?logo=streamlit&logoColor=white" />
   <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-green.svg" />
   <img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" />
-  <a href="https://summer.hackclub.com/projects/10572">
-    <img alt="Hack Club Batch" src="https://img.shields.io/badge/Hack%20Club-Project-red?style=flat&logo=hackclub&logoColor=white" />
+  <img alt="Hack Club Batch" src="https://img.shields.io/badge/Hack%20Club-Project-red?style=flat&logo=hackclub&logoColor=white" />
   </a>
 </p>
 
