@@ -24,6 +24,7 @@
   <i>This is a Python based Anki Cards generator which generates cards using any PDF. An average Medical Student/Doctor/Surgeon spends over 4 hours making and revising Anki Cards. Anki AI makes it easier. You can just upload your pdf and get a well converted Anki Card. </i>
 </p>
 
+![screenshot](https://cdn.hackclub.com/019f03e2-15cb-7b9c-a410-aa0d0dfe9966/image%20(37).png)
 ---
 
 ## Quick Start
