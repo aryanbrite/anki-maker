@@ -18,6 +18,8 @@
 </p>
 
 ---
+> [!IMPORTANT]
+> **AI Usage:** No AI coding assistants like Copilot, Cursor or Claude Code were used to write or edit the code for this project. ChatGPT was used only for occasional conceptual guidance but not directly copy pasted except a bit of data conversion logic.
 
 
 <p align="center">
